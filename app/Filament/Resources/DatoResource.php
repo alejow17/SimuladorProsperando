@@ -12,6 +12,7 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Filament\Tables\Filters\SelectFilter;
 
 class DatoResource extends Resource
 {
@@ -62,7 +63,11 @@ class DatoResource extends Resource
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
-                //
+                SelectFilter::make('categoria')
+                    ->options([
+                        'asociado' => 'Asociado',
+                        'nuevo usuario' => 'Nuevo Usuario'
+                    ])
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),

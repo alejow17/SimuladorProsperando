@@ -58,13 +58,17 @@ class AdminPanelProvider extends PanelProvider
                 SubstituteBindings::class,
                 DisableBladeIconComponents::class,
                 DispatchServingFilamentEvent::class,
+                \Hasnayeen\Themes\Http\Middleware\SetTheme::class
             ])
             ->authMiddleware([
                 Authenticate::class,
             ])
             ->brandLogo(asset('images/logo.png'))
             ->brandLogoHeight('3rem')
-            ->favicon(asset('images/favicon.png'));
+            ->favicon(asset('images/favicon.png'))
+            ->plugin(
+                \Hasnayeen\Themes\ThemesPlugin::make()
+            );
         ;
         ;
     }

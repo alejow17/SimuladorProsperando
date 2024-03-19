@@ -13,16 +13,21 @@ class FormUser extends Component
 
     public $telefono = '';
 
+    public $categoria = '';
+
     public function save()
     {
         Dato::create([
             'nombre' => $this->nombre,
             'email' => $this->email,
-            'telefono' => $this->telefono
+            'telefono' => $this->telefono,
+            'categoria' => $this->categoria,
         ]);
- 
-        // return redirect()->to('/form');
-    }
+
+        
+
+        return redirect()->to('/form');
+    }
 
     public function render()
     {

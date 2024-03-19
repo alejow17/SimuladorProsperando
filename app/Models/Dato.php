@@ -13,5 +13,6 @@ class Dato extends Model
         'nombre',
         'email',
         'telefono',
+        'categoria',
     ];
 }
